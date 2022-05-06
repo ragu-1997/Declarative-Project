@@ -1,0 +1,9 @@
+pipeline {
+    agent any
+    stages {
+        stage('Commit') {
+            steps {
+                echo "Source code deployment from the GITHUB to declarative pipeline....."
+            }
+        }
+    }
