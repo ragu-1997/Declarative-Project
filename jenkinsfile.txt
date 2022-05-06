@@ -1,9 +1,21 @@
-pipeline {
-    agent any
+pipeline { 
+    agent any 
     stages {
-        stage('Commit') {
+        stage('Build') { 
+            steps { 
+                sh 'make' 
+            }
+        }
+        stage('Test'){
             steps {
-                echo "Source code deployment from the GITHUB to declarative pipeline....."
+                sh 'make check'
+                junit 'reports/**/*.xml' 
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'make publish'
             }
         }
     }
+}
