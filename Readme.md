@@ -1,2 +1,2 @@
-# Declaratife prject for Application modernization
+# Declarative prject for Application modernization
 --------------------------------------------------------------------------------
